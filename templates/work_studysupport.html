@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>学習アシスト</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='work_detail.css') }}"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="works-page work-detail-page">
+    <div class="ufo-button">
+      <div class="ufo-core"></div>
+    </div>
+
+    <div class="ufo-menu">
+      <a href="/" class="ufo-menu-top">トップ</a>
+      <a href="/profile" class="ufo-menu-profile">プロフィール</a>
+      <a href="/works" class="ufo-menu-works">制作物</a>
+    </div>
+
+    <main class="work-detail-container">
+      <section class="work-detail-panel">
+        <p class="work-category">Python / Flask / ChatGPT API / PostgreSQL</p>
+
+        <h1 class="work-detail-title">アシスト付きワード保存</h1>
+
+        <p class="work-detail-lead">
+          ChatGPTAPIとFlaskとPostgreSQLを用いて、ワードや詳細を検索・登録（ChatGPTAPIによるアシスト有）・更新・削除するシステムを制作しました。
+        </p>
+        <p class="work-detail-lead">
+          ※無料版のFlaskを使用しているので、アクセスしてすぐはスリープ状態になっています。少し経ってから見れるようになります。数分触らないでいてもスリープ状態になります。
+        </p>
+
+        <div class="work-action">
+          <a
+            href="https://assist-app-pol0.onrender.com/"
+            class="work-open-button"
+            target="_blank"
+            >作品を開く</a
+          >
+        </div>
+
+        <section class="work-section">
+          <h2>制作目的</h2>
+          <ul>
+            <li>
+              ChatGPTにほとんどの作業を任せた場合、どれくらい簡単に、どのようなものを作成できるのか興味がありました。
+            </li>
+            <li>
+              学習中に出会った「プログラミング用語」や「コードの説明」を効率よく整理・記録するために、
+              自分専用の辞書アプリを作りたいと考え、ChatGPTAPIと連携した学習支援ツールを開発しました。
+            </li>
+            <li>
+              このアプリでは、自分で入力するだけでなく、ChatGPTに説明やコードを自動生成させることも可能で、
+              「記録するだけで終わらない、学び直しに強い」学習アシスタントを目指しました。
+            </li>
+          </ul>
+        </section>
+
+        <section class="work-section">
+          <h2>制作の流れ</h2>
+          <ol>
+            <li>
+              この制作物はChatGPTに全て制作してもらおうと考えていたので、始めに「制作する目的」や「何ができるものか」、「どういうページ構成か」を伝えて、1ページずつ制作していきました。
+            </li>
+            <li>
+              基本的にはChatGPTが出してくれるコードをVSCodeにコピペして動作確認し、エラーが出た時もChatGPTに相談しながら解決していきました。
+            </li>
+          </ol>
+        </section>
+
+        <section class="work-section">
+          <h2>操作方法</h2>
+          <ol>
+            <li>
+              「ログイン名（tanobi_test_login）」と「パスワード（testpass456）」を入力してログイン。
+            </li>
+            <li>ログイン後、「登録 or 検索」のモードを選択</li>
+            <li>「登録」を選ぶと、登録画面で以下を入力・選択：</li>
+            <ul>
+              <li>学習ワード、詳細説明、タグなど</li>
+              <li>
+                「説明をアシスト」や「コードをアシスト」にチェックを入れると、ChatGPTがワードに対する簡単な説明とコードを自動生成
+              </li>
+            </ul>
+            <li>
+              「検索」を選ぶと、検索画面で「検索ワード」、「検索方法」、「検索対象」、「タグ」を入力・選択して検索をします。
+            </li>
+            <li>検索結果からデータの編集・削除ができます。</li>
+            <li>
+              管理者（ログイン名：admin、パスワード：admintest）は、ユーザーやタグの登録・編集・削除ができます。
+            </li>
+          </ol>
+        </section>
+
+        <section class="work-section">
+          <h2>今後の改善点</h2>
+          <p>レスポンシブ対応とデザインを整える。</p>
+        </section>
+
+        <section class="work-section">
+          <h2>感じたことや反省点</h2>
+          <ul>
+            <li>
+              コードを全てChatGPTに任せたので、私が作成する何倍も早くカタチになりました。
+            </li>
+            <li>
+              コーディングに入る前にWhimsicalというアプリを用いて仮の設計のようなものを作りましたが、実際に制作を始めると設計通りに進まない部分が多々あり、設計の段階でもっと時間をかけるべきだったと反省しています。
+            </li>
+            <li>
+              同じようなことをさせる処理でも翌日には違う手法のコードを出してくるので、全体で見ると統一感の無いコードになってしまいました。
+            </li>
+            <li>
+              より早く、より精度の良いものを作るためには、ChatGPTに様々な指定をする必要があると感じました。
+            </li>
+            <li>
+              ChatGPTAPIはデータベースやネットに直接アクセスすることができないと知りました。
+            </li>
+          </ul>
+        </section>
+      </section>
+      <div class="work-back-area">
+        <a href="/works/python" class="work-back-button"
+          >← Python制作物一覧へ戻る</a
+        >
+      </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

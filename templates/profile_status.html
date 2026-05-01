@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>現状</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='profile.css') }}"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="profile-page">
+    <!-- UFO -->
+    <div class="ufo-button">
+      <div class="ufo-core"></div>
+    </div>
+
+    <div class="ufo-menu">
+      <a href="/" class="ufo-menu-top">トップ</a>
+      <a href="/profile" class="ufo-menu-profile">プロフィール</a>
+      <a href="/works" class="ufo-menu-works">制作物</a>
+    </div>
+
+    <!-- メイン -->
+    <main class="profile-detail-container">
+      <section class="profile-detail-panel">
+        <p class="profile-category">CURRENT STATUS</p>
+
+        <h1 class="profile-detail-title">現状</h1>
+
+        <section class="profile-section">
+          <div class="profile-text-box">
+            <ul class="status-list">
+              <li>
+                2021年6月〜10月まで職業訓練校（WEBデザイン＋開発基礎科）に通い、HTMLとCSSの基礎を学習しました。
+              </li>
+              <li>
+                卒業後は独学でJavaScript・PHP・データベースの基礎を学習しました。
+              </li>
+              <li>アルバイトで簡単なWEBサイトの編集作業を経験しました。</li>
+              <li>
+                現在はエンジニアとは関係のないアルバイトをしながら転職活動を行っています。
+              </li>
+              <li>
+                現在はChatGPTと協力しながらPython（Flask）の制作物を開発中です。
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 戻る -->
+        <div class="profile-back-area">
+          <a href="/profile" class="profile-back-button"
+            >← プロフィールへ戻る</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- カーソル -->
+    <div class="predator-cursor">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='profile.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

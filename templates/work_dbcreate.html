@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DBのテーブル作成</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='work_detail.css') }}"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="works-page work-detail-page">
+    <div class="ufo-button">
+      <div class="ufo-core"></div>
+    </div>
+
+    <div class="ufo-menu">
+      <a href="/" class="ufo-menu-top">トップ</a>
+      <a href="/profile" class="ufo-menu-profile">プロフィール</a>
+      <a href="/works" class="ufo-menu-works">制作物</a>
+    </div>
+
+    <main class="work-detail-container">
+      <section class="work-detail-panel">
+        <p class="work-category">Python / Flask / ChatGPT API / PostgreSQL</p>
+
+        <h1 class="work-detail-title">DBのテーブル作成</h1>
+
+        <p class="work-detail-lead">
+          ChatGPTAPIとFlaskとPostgreSQLを用いて、データベースに新たにテーブルを作成するシステムを制作します。
+        </p>
+        <p class="work-detail-lead">
+          ※簡易バージョンなので、カラムは3つに限定され、型も5つに限定されます。
+        </p>
+        <p class="work-detail-lead">※まだエラー対策等はされていません。</p>
+        <p class="work-detail-lead">
+          ※無料版のFlaskを使用しているので、アクセスしてすぐはスリープ状態になっています。少し経ってから見れるようになります。数分触らないでいてもスリープ状態になります。
+        </p>
+
+        <div class="work-action">
+          <a
+            href="https://ai-table-maker.onrender.com/"
+            class="work-open-button"
+            target="_blank"
+            >作品を開く</a
+          >
+        </div>
+
+        <section class="work-section">
+          <h2>制作目的</h2>
+          <ul>
+            <li>
+              普段行っている作業を、AIを組み込んだシステムを使用することでより便利にできないかと考えました。
+            </li>
+            <li>
+              ChatGPTにほとんどの作業を任せた場合、どれくらい簡単に、どのようなものを作成できるのか興味がありました。
+            </li>
+            <li>
+              ブラウザ上で各項目の内容を入力するだけで、pgAdminにテーブルを追加することができるのか試してみたいと思いました。
+            </li>
+          </ul>
+        </section>
+
+        <section class="work-section">
+          <h2>制作の流れ</h2>
+          <ol>
+            <li>
+              この制作物はChatGPTにコードは全て任せようと考えていたので、始めに「制作する目的」や「何ができるものか」、「どういうページ構成か」を伝えて制作していきました。
+            </li>
+            <li>
+              ChatGPTの指示通りに環境設定をし、どのファイルにどのようなコードを打ち込むか、フォルダ名やファイル名等も全て指示通りに私が作成しました。
+            </li>
+            <li>
+              GitHubへの登録もRenderへのアップもChatGPTの指示通りに行っています。
+            </li>
+          </ol>
+        </section>
+
+        <section class="work-section">
+          <h2>操作方法</h2>
+          <ol>
+            <li>テーブル名、各カラム名を入力し、各カラムの型を選択します。</li>
+            <li>「AIで確認」ボタンを押します。</li>
+            <li>確認画面で内容を確認し、「テーブル作成」ボタンを押します。</li>
+            <li>
+              完成したテーブルを見たい場合は、「このテーブルを見る」を、トップページに戻る場合は、「入力画面に戻る」を押します。
+            </li>
+            <li>
+              作成したばかりのテーブルは「まだデータがありません」と表示されます。データを追加する場合は「このテーブルにデータを追加する」を押します。
+            </li>
+            <li>
+              各カラムにデータを打ち込み、「登録する」ボタンを押すとテーブルにデータが登録されます。
+            </li>
+            <li>
+              トップページで「テーブル一覧を見る」を押すと、登録されているテーブル名の一覧が表示されます。
+            </li>
+          </ol>
+        </section>
+
+        <section class="work-section">
+          <h2>今後の改善点</h2>
+          <ul>
+            <li>レスポンシブ対応とデザインを整える。</li>
+            <li>カラム数や型の選択肢を増やしたいと考えています。</li>
+          </ul>
+        </section>
+
+        <section class="work-section">
+          <h2>感じたことや反省点</h2>
+          <ul>
+            <li>
+              コードを全てChatGPTに任せたので、私が作成する何倍も早くカタチになりました。
+            </li>
+            <li>
+              これまで何度か一緒に制作してきたことで、エラー等でつまづいた時の対処がより正確になってきました。
+            </li>
+            <li>
+              協力することで早く作成できますが、この方法で制作物をつくることが正解なのか悩んでいます。
+            </li>
+          </ul>
+        </section>
+      </section>
+      <div class="work-back-area">
+        <a href="/works/python" class="work-back-button"
+          >← Python制作物一覧へ戻る</a
+        >
+      </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

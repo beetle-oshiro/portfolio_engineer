@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>文章変換</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='work_detail.css') }}"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="works-page work-detail-page">
+    <div class="ufo-button">
+      <div class="ufo-core"></div>
+    </div>
+
+    <div class="ufo-menu">
+      <a href="/" class="ufo-menu-top">トップ</a>
+      <a href="/profile" class="ufo-menu-profile">プロフィール</a>
+      <a href="/works" class="ufo-menu-works">制作物</a>
+    </div>
+
+    <main class="work-detail-container">
+      <section class="work-detail-panel">
+        <p class="work-category">Python / Flask / ChatGPT API / PostgreSQL</p>
+
+        <h1 class="work-detail-title">文章変換</h1>
+
+        <p class="work-detail-lead">
+          ChatGPTAPIとFlask
+          を用いて、テキストエリアに入力した文章を「ビジネス（上司・取引先）」や「丁寧（正しい日本語）」、「カジュアル（フレンドリー）」、「ユース（若者・流行語）」に合わせて変換するシステムを制作しました。
+        </p>
+        <p class="work-detail-lead">
+          ※無料版のFlaskを使用しているので、アクセスしてすぐはスリープ状態になっています。少し経ってから見れるようになります。数分触らないでいてもスリープ状態になります。
+        </p>
+
+        <div class="work-action">
+          <a
+            href="https://polite-convert.onrender.com/"
+            class="work-open-button"
+            target="_blank"
+            >作品を開く</a
+          >
+        </div>
+
+        <section class="work-section">
+          <h2>制作目的</h2>
+          <ul>
+            <li>
+              ChatGPTにほとんどの作業を任せた場合、どれくらい簡単に、どのようなものを作成できるのか興味がありました。
+            </li>
+            <li>
+              就職活動や知人との連絡とのやりとりで自分自身の敬語が正しいのか疑問をもった時、毎回WEBサイトで調べることが手間に感じました。そこで、自分専用の敬語変換アプリを作りたいと考え、ついでにAIに場面によって文章を変換してもらうツールを開発しました。
+            </li>
+          </ul>
+        </section>
+
+        <section class="work-section">
+          <h2>制作の流れ</h2>
+          <ol>
+            <li>
+              この制作物はChatGPTに全て制作してもらおうと考えていたので、始めに「制作する目的」や「何ができるものか」、「どういうページ構成か」を伝えて、1ページずつ制作していきました。
+            </li>
+            <li>
+              基本的にはChatGPTが出してくれるコードをVSCodeにコピペして動作確認し、エラーが出た時もChatGPTに相談しながら解決していきました。
+            </li>
+          </ol>
+        </section>
+
+        <section class="work-section">
+          <h2>操作方法</h2>
+          <ol>
+            <li>テキストエリアに文章変換したい文章を入力。</li>
+            <li>入力後、「AIで文章を整える」ボタンを押します。</li>
+            <li>
+              リストから「ビジネス」、「丁寧」、「カジュアル」、「ユース」のいずれかを選択。
+            </li>
+            <li>
+              「AIで文章を整える」を押すと、下部に変換後の文章が表示されます。
+            </li>
+          </ol>
+        </section>
+
+        <section class="work-section">
+          <h2>今後の改善点</h2>
+          <p>レスポンシブ対応とデザインを整える。</p>
+        </section>
+
+        <section class="work-section">
+          <h2>感じたことや反省点</h2>
+          <ul>
+            <li>
+              コードを全てChatGPTに任せたので、私が作成する何倍も早くカタチになりました。
+            </li>
+            <li>
+              ChatGPT
+              APIの組み込み方やGitHubへのアップロード、Renderとの連携等も全てChatGPTの指示通りに進めたことでスムーズに公開できましたが、1つ1つの工程で理解できていない部分が多々あります。
+            </li>
+            <li>
+              ChatGPTを用いることで様々なものを効率よく制作できますが、便利さに依存してしまうところが今の私の課題です。
+            </li>
+          </ul>
+        </section>
+      </section>
+      <div class="work-back-area">
+        <a href="/works/python" class="work-back-button"
+          >← Python制作物一覧へ戻る</a
+        >
+      </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

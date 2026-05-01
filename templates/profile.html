@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='profile.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
+    <title>プロフィール</title>
+  </head>
+  <body class="profile-page">
+    <div class="ufo-button">
+      <div class="ufo-core"></div>
+    </div>
+    <div class="ufo-menu">
+      <a href="/" class="ufo-menu-top">トップ</a>
+      <a href="/profile" class="ufo-menu-profile">プロフィール</a>
+      <a href="/works" class="ufo-menu-works">制作物</a>
+    </div>
+
+    <h1>プロフィール</h1>
+
+    <div class="profile-links">
+      <a href="/profile/about" class="profile-link">私について</a>
+      <a href="/profile/career" class="profile-link">職歴</a>
+      <a href="/profile/education" class="profile-link">学歴</a>
+      <a href="/profile/skills" class="profile-link">勉強した言語</a>
+      <a href="/profile/status" class="profile-link">現状</a>
+    </div>
+
+    <div class="predator-cursor">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <script src="{{ url_for('static', filename='profile.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

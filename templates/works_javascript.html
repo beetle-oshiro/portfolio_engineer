@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+    <title>JavaScript</title>
+  </head>
+  <body class="works-page">
+    <div class="ufo-button">
+      <div class="ufo-core"></div>
+    </div>
+    <div class="ufo-menu">
+      <a href="/" class="ufo-menu-top">トップ</a>
+      <a href="/profile" class="ufo-menu-profile">プロフィール</a>
+      <a href="/works" class="ufo-menu-works">制作物</a>
+    </div>
+
+    <div class="hero">
+      <h1 class="main-title">JavaScript</h1>
+      <!-- <div class="title-line"></div>
+      <p class="sub-title">PYTHON</p>
+      <p class="sub-title">BUILD THE FUTURE</p> -->
+    </div>
+
+    <ul class="works-javascript-list">
+      <li>
+        <a href="/works/javascript_app_weather">
+          <div class="work-javascript-title">APIで天気情報を取得しよう</div>
+
+          <div class="work-javascript-tech">(JavaScript × API)</div>
+        </a>
+      </li>
+      <li>
+        <a href="/works/javascript_app_holiday">
+          <div class="work-javascript-title">APIで祝日を取得しよう</div>
+
+          <div class="work-javascript-tech">(JavaScript × API)</div>
+        </a>
+      </li>
+      <li>
+        <a href="/works/javascript_app_capital">
+          <div class="work-javascript-title">APIで首都検索しよう</div>
+
+          <div class="work-javascript-tech">(JavaScript × API)</div>
+        </a>
+      </li>
+    </ul>
+
+    <a href="/works">制作物へ戻る</a>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

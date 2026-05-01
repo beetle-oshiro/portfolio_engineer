@@ -1,0 +1,409 @@
+/* =========================
+   全体（プレデター暗め）
+========================= */
+.profile-page {
+    background: #000;
+    color: #ccc;
+}
+
+/* =========================
+   背景画像
+========================= */
+.profile-page {
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+        url("/static/images/metal_bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* =========================
+   カーソル（赤丸）
+========================= */
+.profile-page {
+    cursor: none;
+}
+
+.predator-cursor {
+    /* position: fixed;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ff2b2b;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+
+    box-shadow:
+        0 0 10px #ff2b2b,
+        0 0 25px rgba(255,0,0,0.6);
+
+    transition: transform 0.05s linear; */
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+/* 3つの丸 */
+.predator-cursor .dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2.5px solid #ff2b2b;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px #ff2b2b,
+        0 0 20px rgba(255,0,0,0.6);
+}
+
+/* 位置ずらす（三角配置） */
+.predator-cursor .dot:nth-child(1) {
+    top: -8px;
+    left: -10px;
+}
+
+.predator-cursor .dot:nth-child(2) {
+    top: -8px;
+    left: 10px;
+}
+
+.predator-cursor .dot:nth-child(3) {
+    top: 8px;
+    left: 0;
+}
+
+/* =========================
+   リンク（影 → 赤発光）
+========================= */
+.profile-link {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 48px;
+    letter-spacing: 4px;
+
+    text-decoration: none;
+
+    /* 中身を透明にする */
+    color: transparent;
+
+    /* 黒い枠だけ表示 */
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.6);
+
+    transition: 0.3s;
+
+    margin-top: 60px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+
+    position: absolute;
+    
+}
+
+.profile-links {
+    position: relative;
+    width: 100%;
+    height: 65vh;
+}
+
+/* 配置 */
+.profile-link:nth-child(1) {
+    top: 5%;
+    left: 18%;
+}
+
+.profile-link:nth-child(3) {
+    top: 32%;
+    left: 8%;
+}
+
+.profile-link:nth-child(4) {
+    top: 55%;
+    left: 42%;
+}
+
+.profile-link:nth-child(5) {
+    top: 20%;
+    right: 8%;
+}
+
+.profile-link:nth-child(7) {
+    bottom: 5%;
+    right: 12%;
+}
+
+/* ホバーで浮き出る */
+.profile-link:hover {
+    color: #ff2b2b;
+    -webkit-text-stroke: 0px;
+    text-shadow: none;
+
+    letter-spacing: 6px;  /* 少し広げる */
+}
+
+/* カーソルの矢印を消す */
+.profile-page,
+.profile-page a,
+.profile-page button {
+    cursor: none;
+}
+
+h1 {
+    font-family: 'Dela Gothic One', sans-serif;
+  font-size: 80px;
+  font-weight: bold;
+  color: rgb(255, 0, 0);
+
+  text-align: center;
+
+  -webkit-text-stroke: 1px #000; /* ←太くする */
+
+  text-shadow:
+  0 0 10px rgba(232, 238, 238, 0.6),  /* ←これ追加（光） */
+    4px 4px 0 #000,
+    4px 4px 8px rgba(0,0,0,0.8);
+
+  letter-spacing: 5px;
+
+  transform: scaleY(0.8);
+  margin-bottom: 20px;
+}
+
+/* =========================
+   私について 詳細ページ
+========================= */
+.profile-detail-container {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.profile-detail-panel {
+    width: 950px;
+    max-width: 100%;
+    padding: 40px;
+
+    background: rgba(0, 0, 0, 0.72);
+    border: 2px solid #ff2b2b;
+
+    clip-path: polygon(
+        5% 0,
+        95% 0,
+        100% 10%,
+        100% 90%,
+        95% 100%,
+        5% 100%,
+        0 90%,
+        0 10%
+    );
+
+    box-shadow:
+        0 0 22px rgba(255, 43, 43, 0.45),
+        inset 0 0 18px rgba(255, 43, 43, 0.35);
+
+    color: #eeeeee;
+}
+
+.profile-category {
+    color: #ff2b2b;
+    letter-spacing: 2px;
+}
+
+.profile-detail-title {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 46px;
+    color: #ff2b2b;
+
+    text-shadow:
+        2px 2px 0 #000,
+        0 0 10px rgba(255, 43, 43, 0.8);
+}
+
+.profile-section {
+    margin-top: 35px;
+    padding-top: 22px;
+    border-top: 2px solid rgba(255, 43, 43, 0.45);
+}
+
+.profile-section h2 {
+    color: #ff2b2b;
+    font-size: 26px;
+}
+
+.profile-info-box,
+.profile-text-box {
+    margin-top: 18px;
+    padding: 22px;
+
+    background: rgba(0, 0, 0, 0.45);
+    border-left: 4px solid #ff2b2b;
+
+    box-shadow: inset 0 0 12px rgba(255, 43, 43, 0.18);
+}
+
+.profile-text-box h3 {
+    color: #ff6b6b;
+    margin-top: 0;
+}
+
+.profile-back-area {
+    margin-top: 35px;
+}
+
+.profile-back-button {
+    display: inline-block;
+    padding: 10px 22px;
+
+    border: 1px solid #ff2b2b;
+    color: #ff2b2b;
+    text-decoration: none;
+
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow: inset 0 0 10px rgba(255, 43, 43, 0.6);
+
+    transition: 0.3s;
+}
+
+.profile-back-button:hover {
+    transform: translateX(-5px);
+    background: rgba(255, 43, 43, 0.15);
+}
+
+/* =========================
+   現状リスト（プレデター風）
+========================= */
+.status-list {
+    list-style: none; /* デフォルトの●消す */
+    padding-left: 0;
+}
+
+.status-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* 赤いドット */
+.status-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+
+    width: 6px;
+    height: 6px;
+
+    /* 通常は暗め */
+    background: #555;
+    border-radius: 50%;
+
+    transition: 0.3s;
+
+    box-shadow: 0 0 6px #ff2b2b;
+}
+
+/* 👇ここがポイント */
+.status-list li:hover::before {
+    background: #ff2b2b;
+
+    box-shadow: 
+        0 0 6px #ff2b2b,
+        0 0 12px rgba(255, 0, 0, 0.6);
+}
+
+/* ホバーで光る（遊び要素） */
+.status-list li:hover {
+    color: #fff;
+}
+
+/* =========================
+   学歴テーブル
+========================= */
+.education-table-wrap {
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+.education-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #eeeeee;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* ヘッダー */
+.education-table th {
+    padding: 12px;
+    border: 1px solid rgba(255, 0, 0, 0.4);
+
+    background: rgba(0, 0, 0, 0.8);
+    color: #ff3b3b;
+    font-size: 16px;
+    text-shadow: 0 0 6px rgba(255, 0, 0, 0.7);
+
+    font-family: 'Dela Gothic One', sans-serif;
+}
+
+/* セル */
+.education-table td {
+    padding: 10px;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+
+    color: #f0f0f0;
+    font-size: 15px;
+    line-height: 1.6;
+
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* ホバーで光る */
+.education-table tr:hover td {
+    background: rgba(255, 0, 0, 0.16);
+    color: #ffffff;
+}
+
+/* =========================
+   職歴テーブル
+========================= */
+.career-panel {
+  max-width: 1300px;
+  width: 95%;
+}
+
+.career-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #eeeeee;
+    font-size: 16px;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+}
+
+.career-table th {
+    padding: 12px;
+    border: 1px solid rgba(255, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
+    color: #ff3b3b;
+    font-size: 16px;
+    text-shadow: 0 0 6px rgba(255, 0, 0, 0.7);
+}
+
+.career-table td {
+    padding: 10px;
+    border: 1px solid rgba(255, 0, 0, 0.5);
+    color: #f0f0f0;
+    font-size: 15px;
+    line-height: 1.6;
+    text-shadow: 0 0 4px rgba(0,0,0,0.8);
+}
+
+.career-table tr:hover td {
+    background: rgba(255, 0, 0, 0.16);
+    color: #ffffff;
+}

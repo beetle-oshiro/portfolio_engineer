@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>勉強した言語</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='profile.css') }}"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="profile-page">
+    <div class="ufo-button">
+      <div class="ufo-core"></div>
+    </div>
+
+    <div class="ufo-menu">
+      <a href="/" class="ufo-menu-top">トップ</a>
+      <a href="/profile" class="ufo-menu-profile">プロフィール</a>
+      <a href="/works" class="ufo-menu-works">制作物</a>
+    </div>
+
+    <main class="profile-detail-container">
+      <section class="profile-detail-panel">
+        <p class="profile-category">SKILL DATA</p>
+
+        <h1 class="profile-detail-title">勉強した言語</h1>
+
+        <section class="profile-section">
+          <h2>フロントエンド</h2>
+
+          <div class="profile-text-box">
+            <h3>HTML</h3>
+            <p>職業訓練校で基礎を学びました。</p>
+          </div>
+
+          <div class="profile-text-box">
+            <h3>CSS</h3>
+            <p>
+              職業訓練校で基礎を学び、現在もポートフォリオ制作を通して学習しています。
+            </p>
+          </div>
+
+          <div class="profile-text-box">
+            <h3>JavaScript</h3>
+            <p>
+              独学で基礎を学びました。UdemyやChatGPTを活用し、非同期処理やjQueryにも触れました。
+            </p>
+          </div>
+        </section>
+
+        <section class="profile-section">
+          <h2>バックエンド</h2>
+
+          <div class="profile-text-box">
+            <h3>PHP</h3>
+            <p>
+              独学で基礎を学びました。フォーム処理やMySQLとの連携を学習しました。
+            </p>
+          </div>
+
+          <div class="profile-text-box">
+            <h3>Python</h3>
+            <p>
+              ChatGPTと協力して基礎を学習しました。Flaskを使ったWebアプリ制作にも取り組みました。
+            </p>
+          </div>
+
+          <div class="profile-text-box">
+            <h3>VB.net</h3>
+            <p>基礎を学習した経験がありますが、ここ数年触れていません。</p>
+          </div>
+        </section>
+
+        <section class="profile-section">
+          <h2>データベース・開発ツール</h2>
+
+          <div class="profile-text-box">
+            <h3>MySQL / PostgreSQL</h3>
+            <p>PHPの制作物でさくらインターネットのMySQLを使用しました。</p>
+            <p>主にPythonの制作物でRenderのPostgreSQLを使用しました。</p>
+          </div>
+
+          <div class="profile-text-box">
+            <h3>GitHub</h3>
+            <p>
+              制作物の管理やRenderへのデプロイ連携で使用していますが、全てChatGPTの指示のもと操作しています。
+            </p>
+          </div>
+        </section>
+
+        <div class="profile-back-area">
+          <a href="/profile" class="profile-back-button"
+            >← プロフィールへ戻る</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <div class="predator-cursor">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='profile.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

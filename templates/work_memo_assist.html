@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>メモアシスト</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='work_detail.css') }}"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="works-page work-detail-page">
+    <div class="ufo-button">
+      <div class="ufo-core"></div>
+    </div>
+
+    <div class="ufo-menu">
+      <a href="/" class="ufo-menu-top">トップ</a>
+      <a href="/profile" class="ufo-menu-profile">プロフィール</a>
+      <a href="/works" class="ufo-menu-works">制作物</a>
+    </div>
+
+    <main class="work-detail-container">
+      <section class="work-detail-panel">
+        <p class="work-category">Python / Flask / ChatGPT API / PostgreSQL</p>
+
+        <h1 class="work-detail-title">メモアシスト</h1>
+
+        <p class="work-detail-lead">
+          ChatGPTAPI × Flask ×
+          PostgreSQLを用いて、メモの内容を整理してくれるシステムを制作します。
+        </p>
+        <p class="work-detail-lead">
+          ※無料版のFlaskを使用しているので、アクセスしてすぐはスリープ状態になっています。少し経ってから見れるようになります。数分触らないでいてもスリープ状態になります。
+        </p>
+
+        <div class="work-action">
+          <a
+            href="https://work-memo-assist.onrender.com/"
+            class="work-open-button"
+            target="_blank"
+            >作品を開く</a
+          >
+        </div>
+
+        <section class="work-section">
+          <h2>制作目的</h2>
+          <ul>
+            <li>
+              ChatGPTにほとんどの作業を任せた場合、どれくらい簡単に、どのようなものを作成できるのか興味がありました。
+            </li>
+            <li>
+              勉強中や仕事を始める際にとったメモの内容をAIに整理してもらうシステムがあると便利だと考え、ChatGPT
+              APIと連携したメモアシストツールの制作を始めました。
+            </li>
+            <li>
+              このアプリでは、メモの内容を整理して保存し、カレンダー機能やワード検索機能でメモの内容を呼び出せるようにしていく予定です。
+            </li>
+          </ul>
+        </section>
+
+        <section class="work-section">
+          <h2>制作の流れ</h2>
+          <ol>
+            <li>
+              この制作物はChatGPTにコードは全て任せようと考えていたので、始めに「制作する目的」や「何ができるものか」、「どういうページ構成か」を伝えて制作していきました。
+            </li>
+            <li>
+              基本的にはChatGPTが出してくれるコードをVSCodeにコピペして動作確認し、エラーが出た時もChatGPTに相談しながら解決していきました。
+            </li>
+          </ol>
+        </section>
+
+        <section class="work-section">
+          <h2>操作方法</h2>
+          <ol>
+            <li>テキストエリアにメモの内容を入力します。</li>
+            <li>
+              入力後、「AIで整理して保存」ボタンを押します。 APIによる文章整理
+            </li>
+            <li>
+              ページの下部にメモを整理した内容が表示され、データベースにも保存されます。
+            </li>
+            <li>
+              「保存済みメモの一覧を見る」を押すと、保存されたデータの一覧が表示されます。
+            </li>
+          </ol>
+        </section>
+
+        <section class="work-section">
+          <h2>今後の改善点</h2>
+          <ul>
+            <li>レスポンシブ対応とデザインを整える。</li>
+            <li>ワード検索機能やカレンダー機能を足します。</li>
+          </ul>
+        </section>
+
+        <section class="work-section">
+          <h2>感じたことや反省点</h2>
+          <ul>
+            <li>
+              コードを全てChatGPTに任せたので、私が作成する何倍も早くカタチになりました。
+            </li>
+            <li>
+              これまで何度か一緒に制作してきたことで、エラー等でつまづいた時の対処がより正確になってきました。
+            </li>
+            <li>
+              協力することで早く作成できますが、この方法で制作物をつくることが正解なのか悩んでいます。
+            </li>
+          </ul>
+        </section>
+      </section>
+      <div class="work-back-area">
+        <a href="/works/python" class="work-back-button"
+          >← Python制作物一覧へ戻る</a
+        >
+      </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

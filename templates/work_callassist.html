@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>電話アシスト</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='work_detail.css') }}"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="works-page work-detail-page">
+    <div class="ufo-button">
+      <div class="ufo-core"></div>
+    </div>
+
+    <div class="ufo-menu">
+      <a href="/" class="ufo-menu-top">トップ</a>
+      <a href="/profile" class="ufo-menu-profile">プロフィール</a>
+      <a href="/works" class="ufo-menu-works">制作物</a>
+    </div>
+
+    <main class="work-detail-container">
+      <section class="work-detail-panel">
+        <p class="work-category">Python / Flask / ChatGPT API / PostgreSQL</p>
+
+        <h1 class="work-detail-title">電話アシスト</h1>
+
+        <p class="work-detail-lead">
+          ChatGPTAPIとFlaskとWhisperとPostgreSQLを用いて、音声データから会社名や担当者名を推定し、データベースから取次ぎ候補を表示するシステムを制作しました。
+        </p>
+        <p class="work-detail-lead">※ ローカル環境では動作確認済みです。</p>
+        <p class="work-detail-lead">
+          ※Render無料プランではWhisper実行時のメモリ制限の影響で安定動作が難しかったため、下部にデモ動画を掲載しています。
+        </p>
+        <p class="work-detail-lead">
+          ※ 実際の画面の流れや候補表示の動作は、デモ動画から確認できます。
+        </p>
+
+        <div class="work-action">
+          <a
+            href="https://work-memo-assist.onrender.com/"
+            class="work-open-button"
+            target="_blank"
+            rel="noopener noreferrer"
+            >作品を開く
+          </a>
+        </div>
+
+        <section class="work-section">
+          <h2>制作目的</h2>
+          <ul>
+            <li>
+              電話対応で相手の「〇〇株式会社の〇〇です」を1発で認識できないことがあるので、これをアシストしてくれるものがあれば便利だと考えました。
+            </li>
+            <li>
+              電話対応のような実務に近い場面で、AIを活用して補助できる仕組みを作ってみたいと思いました。
+            </li>
+            <li>
+              ChatGPTにほとんどの作業を任せた場合、どれくらい簡単に、どのようなものを作成できるのか興味がありました。
+            </li>
+            <!-- <li>
+              Whisperによる文字起こしだけでは曖昧になりやすい人名・社名を、ChatGPTAPIと組み合わせることで補えるのではないかと考えました。
+            </li> -->
+            <!-- <li>
+              音声認識・AI判定・データベース検索を組み合わせたシステムを実際に形にしてみたいと思いました。
+            </li> -->
+          </ul>
+        </section>
+
+        <section class="work-section">
+          <h2>制作の流れ</h2>
+          <ol>
+            <li>
+              まずWhisperで音声ファイルを文字起こしし、電話内容をテキスト化しました。
+            </li>
+            <li>
+              次にChatGPTAPIを用いて、文字起こし結果から会社名・人物名の候補を判定しました。
+            </li>
+            <li>
+              判定結果をもとにPostgreSQLの連絡先データベースを検索し、候補一覧を表示する流れで実装しました。
+            </li>
+            <!-- <li>
+              GitHubへの登録やRenderへの公開も行い、Web上での見せ方まで含めて確認しました。
+            </li> -->
+          </ol>
+        </section>
+
+        <section class="work-section">
+          <h2>操作方法</h2>
+          <ol>
+            <li>音声ファイル（mp3 / wav / m4a）を選択します。</li>
+            <li>「文字起こしして検索」ボタンを押します。</li>
+            <li>
+              Whisperが音声を文字起こしし、ChatGPTが会社名・人物名の候補を判定します。
+            </li>
+            <li>
+              判定結果をもとに、データベースから該当する候補が表示されます。
+            </li>
+            <li>
+              会社名まで判定できた場合はその会社に絞った候補を、人物名のみ判定できた場合は同名候補を表示します。
+            </li>
+          </ol>
+        </section>
+
+        <section class="work-section">
+          <h2>今後の改善点</h2>
+          <li>レスポンシブ対応とデザインを整える。</li>
+          <li>
+            今は用意した音声データが対象なので、リアルタイムの音声に対応できるものにしていきたいと考えています。
+          </li>
+        </section>
+
+        <section class="work-section">
+          <h2>感じたことや反省点</h2>
+          <ul>
+            <li>
+              コードを全てChatGPTに任せたので、私が作成する何倍も早くカタチになりました。
+            </li>
+            <li>
+              これまで何度か一緒に制作してきたことで、エラー等でつまづいた時の対処がより正確になってきました。
+            </li>
+            <li>
+              協力することで早く作成できますが、この方法で制作物をつくることが正解なのか悩んでいます。
+            </li>
+          </ul>
+        </section>
+
+        <section class="work-section">
+          <h2>デモ動画</h2>
+          <p>
+            Render無料プランでは安定動作が難しかったため、ローカル環境での実行動画を掲載しています。
+          </p>
+          <p>
+            会社名＋人物名が含まれる場合と、人物名のみの場合の2パターンを確認できます。
+          </p>
+          <div class="demo-block">
+            <p class="demo-title">① 会社名＋名前パターン</p>
+            <p class="demo-desc">
+              会社名と担当者名の両方が音声に含まれている場合の動作例です。
+            </p>
+            <div class="demo-video-area">
+              <video class="demo-video" controls>
+                <source
+                  src="{{ url_for('static', filename='videos/phone_assist_demo2.mp4') }}"
+                  type="video/mp4"
+                />
+                お使いのブラウザは動画再生に対応していません。
+              </video>
+            </div>
+          </div>
+          <div class="demo-block">
+            <p class="demo-title">② 名前のみパターン</p>
+            <p class="demo-desc">
+              人物名のみが音声に含まれている場合の動作例です。
+            </p>
+            <div class="demo-video-area">
+              <video class="demo-video" controls>
+                <source
+                  src="{{ url_for('static', filename='videos/phone_assist_demo1.mp4') }}"
+                  type="video/mp4"
+                />
+                お使いのブラウザは動画再生に対応していません。
+              </video>
+            </div>
+          </div>
+        </section>
+      </section>
+      <div class="work-back-area">
+        <a href="/works/python" class="work-back-button"
+          >← Python制作物一覧へ戻る</a
+        >
+      </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>文章解読</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='work_detail.css') }}"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="works-page work-detail-page">
+    <div class="ufo-button">
+      <div class="ufo-core"></div>
+    </div>
+
+    <div class="ufo-menu">
+      <a href="/" class="ufo-menu-top">トップ</a>
+      <a href="/profile" class="ufo-menu-profile">プロフィール</a>
+      <a href="/works" class="ufo-menu-works">制作物</a>
+    </div>
+
+    <main class="work-detail-container">
+      <section class="work-detail-panel">
+        <p class="work-category">Python / Flask / ChatGPT API / PostgreSQL</p>
+
+        <h1 class="work-detail-title">AI解読</h1>
+
+        <p class="work-detail-lead">
+          ChatGPTAPIとFlaskを用いて、入力された文章を目的に応じて整理・解説するシステムを制作しました。
+        </p>
+        <p class="work-detail-lead">
+          ※無料版のFlaskを使用しているので、アクセスしてすぐはスリープ状態になっています。少し経ってから見れるようになります。数分触らないでいてもスリープ状態になります。
+        </p>
+
+        <div class="work-action">
+          <a
+            href="https://ai-reader-system.onrender.com/"
+            class="work-open-button"
+            target="_blank"
+            >作品を開く</a
+          >
+        </div>
+
+        <section class="work-section">
+          <h2>制作目的</h2>
+          <ul>
+            <li>
+              ChatGPTにほとんどの作業を任せた場合、どれくらい簡単に、どのようなものを作成できるのか興味がありました。
+            </li>
+            <li>
+              AIを活用して、「様々な文章の意味をわかりやすく説明する」実用的なシステムを作りたいと考えました。
+            </li>
+            <li>
+              特に、利用規約やエラー文などの「わかりにくい文章」を簡単に理解できる仕組みがあると便利だと感じたためです。
+            </li>
+            <!-- <li>
+              また、AIに「内容の適切さを判定させる」処理（OK / LACK /
+              NG）を実装することで、より実用的なシステムになると考えました。
+            </li> -->
+          </ul>
+        </section>
+
+        <section class="work-section">
+          <h2>制作の流れ</h2>
+          <ol>
+            <li>
+              この制作物はChatGPTに全て制作してもらおうと考えていたので、始めに「制作する目的」や「何ができるものか」、「どういうページ構成か」を伝えて、1ページずつ制作していきました。
+            </li>
+            <li>
+              基本的にはChatGPTが出してくれるコードをVSCodeにコピペして動作確認し、エラーが出た時もChatGPTに相談しながら解決していきました。
+            </li>
+          </ol>
+        </section>
+
+        <section class="work-section">
+          <h2>操作方法</h2>
+          <ol>
+            <li>テキストエリアに解読したい文章を入力します。</li>
+            <li>解読モード（規約・エラー・文章・求人）を選択します。</li>
+            <li>「解読する」ボタンを押します。</li>
+            <li>AIが内容を判定し、下部に解読結果を表示します。</li>
+            <li>
+              モードが適切な場合のみ「やさしく説明する」ボタンが使用できます。
+            </li>
+          </ol>
+        </section>
+
+        <section class="work-section">
+          <h2>今後の改善点</h2>
+          <p>レスポンシブ対応とデザインを整える。</p>
+          <p>求人の解読の制度を上げていきたいと考えています。</p>
+        </section>
+
+        <section class="work-section">
+          <h2>感じたことや反省点</h2>
+          <ul>
+            <li>
+              コードを全てChatGPTに任せたので、私が作成する何倍も早くカタチになりました。
+            </li>
+            <li>
+              これまで何度か一緒に制作してきたことで、エラー等でつまづいた時の対処がより正確になってきました。
+            </li>
+            <li>
+              協力することで早く作成できますが、この方法で制作物をつくることが正解なのか悩んでいます。
+            </li>
+          </ul>
+        </section>
+      </section>
+      <div class="work-back-area">
+        <a href="/works/python" class="work-back-button"
+          >← Python制作物一覧へ戻る</a
+        >
+      </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

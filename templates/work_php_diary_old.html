@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PHP制作物</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='work_detail.css') }}"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="works-page work-detail-page php-theme">
+    <div class="ufo-button">
+      <div class="ufo-core"></div>
+    </div>
+
+    <div class="ufo-menu">
+      <a href="/" class="ufo-menu-top">トップ</a>
+      <a href="/profile" class="ufo-menu-profile">プロフィール</a>
+      <a href="/works" class="ufo-menu-works">制作物</a>
+    </div>
+
+    <main class="work-detail-container">
+      <section class="work-detail-panel">
+        <p class="work-category">PHP / MySQL / HTML / CSS</p>
+
+        <h1 class="work-detail-title">日直日誌（旧）</h1>
+
+        <p class="work-detail-lead">
+          PHPとJavaScriptとデータベースを使って、WEB上で日直日誌の登録・表示・管理を行う制作物です。
+        </p>
+
+        <div class="work-action">
+          <a
+            href="https://beetle45046.sakura.ne.jp/kadai_stm_kari/login.php"
+            class="work-open-button"
+            target="_blank"
+            >作品を開く</a
+          >
+        </div>
+
+        <section class="work-section">
+          <h2>制作目的</h2>
+          <ol>
+            <li>
+              訓練校のクラスの日直日誌が紙ベースでその日の当番の人しか見ることが出来なかった為、それぞれのPC上で登録・編集ができるものがあると便利だと考えました。
+            </li>
+            <li>
+              訓練校の教室のエアコンの寒暖を訴えずらい空気感があったので、それぞれのPCから先生のPCへ意思表示ができるものがあると便利だと考えました。
+            </li>
+            <li>
+              授業中に質問したいことがあっても、質問の内容によっては手をあげずらいことがあったので、それぞれのPCから先生のPCへ質問を飛ばせないかと考えました。
+            </li>
+          </ol>
+        </section>
+
+        <section class="work-section">
+          <h2>操作方法</h2>
+          <ol>
+            <li>
+              最初のログイン画面には１～29（生徒）、０（先生）を選択してください。
+            </li>
+            <li>
+              生徒の日直日誌画面で日誌の登録・編集をし、コンタクトページで室温のアピールと先生への質問を送信します。
+            </li>
+            <li>
+              先生のコンタクトページで室温アピールと質問を受信し、設定ページで各データベースの編集を行います。
+            </li>
+          </ol>
+        </section>
+
+        <section class="work-section">
+          <h2>工夫した点</h2>
+          <p>
+            実際に使えるものを意識しました。
+            視覚的に生徒の寒暖情報を伝えるため、文字ではなく色で表現しました。
+          </p>
+        </section>
+
+        <section class="work-section">
+          <h2>今後の改善点</h2>
+          <p>未完成な部分があるため、完成させます。</p>
+          <p>
+            デザインやレスポンシブ対応を整え、
+            より見やすく使いやすい画面に改善していきたいです。
+          </p>
+        </section>
+      </section>
+      <div class="work-back-area">
+        <a href="/works/php" class="work-back-button">← PHP制作物一覧へ戻る</a>
+      </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

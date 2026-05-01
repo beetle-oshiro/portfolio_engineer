@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>職歴</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='profile.css') }}"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="profile-page">
+    <div class="ufo-button"><div class="ufo-core"></div></div>
+
+    <div class="ufo-menu">
+      <a href="/">トップ</a>
+      <a href="/profile">プロフィール</a>
+      <a href="/works">制作物</a>
+    </div>
+
+    <main class="profile-detail-container">
+      <section class="profile-detail-panel career-panel">
+        <p class="profile-category">CAREER DATA</p>
+        <h1 class="profile-detail-title">職歴</h1>
+
+        <div class="education-table-wrap">
+          <table class="career-table">
+            <thead>
+              <tr>
+                <th>時期</th>
+                <th>社名</th>
+                <th>部署・職種</th>
+                <th>業務内容</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>2009年4月〜2010年6月</td>
+                <td>株式会社テクノメディカ</td>
+                <td>生産技術部（サービスエンジニア）</td>
+                <td>
+                  主に病院に出向し、自社装置の修理・メンテナンスを担当。
+                  出荷調整や提案業務も経験。
+                </td>
+              </tr>
+
+              <tr>
+                <td>-</td>
+                <td>アルバイト</td>
+                <td>タイピング</td>
+                <td>各種登録情報のデータ入力業務を担当。</td>
+              </tr>
+
+              <tr>
+                <td>2013年5月〜2013年10月</td>
+                <td>三栄時計株式会社</td>
+                <td>受付</td>
+                <td>
+                  修理受付、発送対応、外商担当との連携など窓口業務を担当。
+                </td>
+              </tr>
+
+              <tr>
+                <td>2014年2月〜2015年8月</td>
+                <td>株式会社永昌堂</td>
+                <td>校正</td>
+                <td>制作物の誤字・レイアウト確認、修正指示を担当。</td>
+              </tr>
+
+              <tr>
+                <td>2015年11月〜2018年3月</td>
+                <td>株式会社アポロウェーブ</td>
+                <td>調整・製造</td>
+                <td>
+                  ・検査機器の調整作業<br />
+                  ・装置組立・納品対応
+                </td>
+              </tr>
+
+              <tr>
+                <td>-</td>
+                <td>アルバイト</td>
+                <td>PC設定</td>
+                <td>PC初期設定</td>
+              </tr>
+
+              <tr>
+                <td>2020年5月〜2021年3月</td>
+                <td>ハーベスト株式会社</td>
+                <td>プログラマ見習い</td>
+                <td>
+                  ・先輩社員に同行してシステム納品の補助をしていました。<br />
+                  ・社内では簡単なプログラムの訂正や、VB
+                </td>
+              </tr>
+
+              <tr>
+                <td>2022年～</td>
+                <td>アルバイト（複数）</td>
+                <td>資料作成（整理） / 軽作業 / WEB編集 / 出品作業</td>
+                <td>
+                  ・PC初期設定<br />
+                  ・WEBサイト編集、動作確認<br />
+                  ・WordPress記事作成<br />
+                  ・メルカリやヤフオクの出品作業
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="profile-back-area">
+          <a href="/profile" class="profile-back-button">
+            ← プロフィールへ戻る
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <div class="predator-cursor">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='profile.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

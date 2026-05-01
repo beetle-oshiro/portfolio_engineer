@@ -1,0 +1,897 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Russo One', sans-serif;
+
+  background-image: url("/static/images/bg.jpg");
+  background-size: cover;       /* 画面いっぱいに広げる */
+  background-position: center;  /* 中央基準 */
+  background-repeat: no-repeat; /* 繰り返さない */
+}
+
+/* 星 */
+.home-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(1.5px 1.5px at 70% 80%, white, transparent),
+    radial-gradient(1.5px 1.5px at 40% 60%, white, transparent),
+    radial-gradient(2px 2px at 90% 20%, white, transparent),
+    radial-gradient(1px 1px at 10% 90%, white, transparent);
+
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.6;
+  z-index: -1;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.4); /* 少し暗くする */
+  z-index: -1;
+}
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-image:
+    radial-gradient(1px 1px at 30% 20%, white, transparent),
+    radial-gradient(1px 1px at 80% 70%, white, transparent);
+
+  background-repeat: repeat;
+  background-size: 300px 300px;
+
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* 制作物の背景 */
+body.works-page {
+  background-image: url("../static/images/metal_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.works-page {
+  color: #111;
+  min-height: 100vh;
+}
+
+
+/* ホバーした時 */
+ul li a:hover {
+  color: #ffff66;        /* 明るい黄色 */
+  text-shadow: 0 0 5px #ffff66; /* 光らせる */
+}
+
+/* フォント全体 */
+body {
+  font-family: 'Russo One', sans-serif;
+}
+
+/* タイトル */
+h1 {
+  color: #333;
+  text-shadow: 0 0 10px #bafafa;
+}
+
+/* ヒーロー全体（中央配置） */
+.hero {
+  /* text-align: center;
+  margin-top: 120px;
+  margin-bottom: 60px; */
+  text-align: center;
+  margin-top: 40px;
+  /* margin-left: 40px; */
+}
+
+/* トップページのタイトル */
+.site-title {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 56px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  line-height: 1.4;
+  text-align: center;
+
+  color: transparent;
+
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #eeeeee 20%,
+    #cccccc 40%,
+    #ffffff 50%,
+    #bbbbbb 70%,
+    #ffffff 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 縁をちょい明るめに */
+  /* -webkit-text-stroke: 1px #888; */
+
+  /* 影を弱めて“黒感”を消す */
+  text-shadow:
+    1px 1px 2px rgba(0,0,0,0.4),
+    0 0 8px rgba(255,255,255,0.6);
+
+    margin-bottom: 40px;
+}
+
+/* トップページの各ボタン */
+/* ボタン全体の配置 */
+.main-buttons {
+    display: flex;
+    justify-content: center; /* 中央寄せ */
+    gap: 60px; /* ボタン間の間隔 */
+    margin-top: 80px; /* タイトルとの距離 */
+}
+
+/* 共通ボタンデザイン */
+/* ボタン内のレイアウト */
+.main-button {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    width: 300px;
+    padding: 30px;
+
+    border: 2px solid;
+    background: rgba(0, 0, 0, 0.45);
+
+    clip-path: polygon(
+        8% 0,
+        92% 0,
+        100% 12%,
+        100% 88%,
+        92% 100%,
+        8% 100%,
+        0 88%,
+        0 12%
+    );
+
+    box-shadow:
+        inset 0 0 10px currentColor;
+
+    overflow: visible;
+}
+
+.main-button::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid currentColor;
+
+    clip-path: polygon(
+        8% 0,
+        92% 0,
+        100% 12%,
+        100% 88%,
+        92% 100%,
+        8% 100%,
+        0 88%,
+        0 12%
+    );
+
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.main-button span {
+    font-family: 'Russo One', sans-serif;
+    font-size: 32px;
+    letter-spacing: 4px;
+    text-decoration: none;
+}
+
+/* 画像サイズ */
+.button-img {
+    width: 220px;
+    height: auto;
+    transition: 0.3s;
+}
+
+/* ホバーで画像も動く */
+.main-button:hover .button-img {
+    transform: scale(1.1);
+}
+
+/* =====================
+  通常時（シルバー）
+===================== */
+
+.profile-button,
+.works-button {
+    color: #c0c0c0;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/* spanもシルバー */
+.profile-button span,
+.works-button span {
+    color: #c0c0c0;
+}
+
+/* ホバー時（共通） */
+.main-button:hover {
+    transform: scale(1.1);
+}
+
+/* =====================
+  プロフィール（ホバー）
+===================== */
+
+.profile-button:hover {
+    color: #ff2b2b;
+    border-color: #ff2b2b;
+
+    box-shadow:
+    0 0 12px #ff2b2b,
+    0 0 38px rgba(255, 0, 0, 0.9),
+    inset 0 0 38px rgba(255, 0, 0, 0.65);
+}
+
+.profile-button:hover span {
+    color: #ff2b2b;
+    transform: scale(1.05);
+}
+
+/* =====================
+  制作物（ホバー）
+===================== */
+
+.works-button:hover {
+    color: #ffd700;
+    border-color: #ffd700;
+
+    box-shadow:
+    0 0 12px #ffd700,
+    0 0 38px rgba(255, 215, 0, 0.9),
+    inset 0 0 38px rgba(255, 215, 0, 0.65);
+}
+
+.works-button:hover span {
+    color: #ffd700;
+    transform: scale(1.05);
+}
+
+.main-button,
+.main-button span {
+    font-family: 'Dela Gothic One', 'Russo One', sans-serif;
+    text-decoration: none;
+}
+
+
+/* メインタイトル */
+.main-title {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+
+  -webkit-text-stroke: 0.1px #000; /* ←太くする */
+
+  text-shadow:
+  0 0 10px rgba(185, 253, 253, 0.6),  /* ←これ追加（光） */
+    4px 4px 0 #000,
+    4px 4px 8px rgba(0,0,0,0.8);
+
+  letter-spacing: 5px;
+
+  transform: scaleY(0.8);
+  margin-bottom: 20px;
+}
+.works_main-title {
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 80px;
+  font-weight: bold;
+  color: rgb(252, 231, 3);
+
+  -webkit-text-stroke: 1px #000; /* ←太くする */
+
+  text-shadow:
+  0 0 10px rgba(232, 238, 238, 0.6),  /* ←これ追加（光） */
+    4px 4px 0 #000,
+    4px 4px 8px rgba(0,0,0,0.8);
+
+  letter-spacing: 5px;
+
+  transform: scaleY(0.8);
+  margin-bottom: 20px;
+}
+.sub-title2 {
+  font-family: 'Russo One', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+
+  text-shadow:
+    4px 4px 0 #000,
+    4px 4px 8px rgba(0,0,0,0.8);
+  /* background-color: black; */
+  /* display: inline-block; */
+  /* padding: 8px 25px; */
+
+  letter-spacing: 5px;
+
+  /* box-shadow: 0 0 15px rgba(0,0,0,0.9); */
+}
+
+
+/* 下のライン */
+.title-line {
+  width: 300px;
+  height: 6px;
+  background: black;
+  margin: 10px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+/* サブタイトル */
+.sub-title {
+  font-family: 'Russo One', sans-serif;
+  font-size: 30px;
+  color: white;
+
+  background: black;
+  display: inline-block;
+  padding: 8px 25px;
+
+  letter-spacing: 5px;
+
+  box-shadow: 0 0 15px rgba(0,0,0,0.9);
+}
+
+/* リスト全体 */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* 各項目（パネル風） */
+/* ul li {
+  margin-bottom: 15px;
+  padding: 15px;
+
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #bafafa;
+
+  box-shadow: 
+    0 0 8px rgba(0,255,255,0.3),
+    inset 0 0 10px rgba(0,255,255,0.2);
+} */
+
+/* リンク */
+/* ul li a {
+  font-size: 20px;
+  color: #ffd700;
+  text-decoration: none;
+} */
+
+/* ホバー */
+/* ul li:hover {
+  border-color: #ffff66;
+  box-shadow: 
+    0 0 12px #ffff66,
+    inset 0 0 12px rgba(255,255,102,0.4);
+}
+
+ul li a:hover {
+  color: #ffff66;
+} */
+
+/* ページ移動 */
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background-color: #05070d;
+  color: #7fffd4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  letter-spacing: 4px;
+  z-index: 9999;
+}
+
+/* ============================= */
+/* ページ遷移：斜め扉が左右に開く */
+/* ============================= */
+
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background-color: #02030a;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* 共通ドア */
+.door {
+  position: absolute;
+  top: 0;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(135deg, #1b1f24, #5f6870, #2b3036);
+  box-shadow: inset 0 0 25px rgba(0, 255, 255, 0.2);
+  z-index: 2;
+}
+
+/* 左ドア：右側を斜めにする */
+.door-left {
+  left: 0;
+  clip-path: polygon(0 0, 88% 0, 100% 100%, 0 100%);
+  border-right: 2px solid #7fffd4;
+  animation: openLeft 0.8s forwards;
+}
+
+/* 右ドア：左側を斜めにする */
+.door-right {
+  right: 0;
+  clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
+  border-left: 2px solid #7fffd4;
+  animation: openRight 0.8s forwards;
+}
+
+/* 左に開く */
+@keyframes openLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* 右に開く */
+@keyframes openRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* 表示テキスト */
+.page-transition p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  color: #7fffd4;
+  font-size: 28px;
+  letter-spacing: 4px;
+  z-index: 3;
+}
+
+/* 制作物ページ */
+.page-lead {
+  color: #111;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.menu-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.menu-card {
+  width: 260px;
+  padding: 22px;
+  background: rgba(5, 10, 15, 0.78);
+  border: 2px solid #7fffd4;
+  color: #ffd700;
+  text-decoration: none;
+  box-shadow:
+    0 0 12px rgba(127, 255, 212, 0.45),
+    inset 0 0 16px rgba(127, 255, 212, 0.18);
+  transition: 0.25s;
+}
+
+.menu-card span {
+  display: block;
+  font-size: 26px;
+  letter-spacing: 2px;
+}
+
+.menu-card small {
+  display: block;
+  margin-top: 10px;
+  color: #dfefff;
+  font-size: 13px;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  border-color: #ffd700;
+  box-shadow:
+    0 0 16px rgba(255, 215, 0, 0.7),
+    inset 0 0 18px rgba(255, 215, 0, 0.25);
+}
+
+.works-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.works-grid img {
+  width: 300px;
+  border: 2px solid #333;
+  transition: transform 0.3s, box-shadow 0.3s;
+  transform: perspective(800px) rotateY(0deg);
+}
+
+
+/* ホバーで浮かせる（超スターウォーズ感） */
+.works-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(146, 231, 255, 0.6);
+}
+
+
+/* ---------- python ---------- */
+/* リスト全体を中央 */
+.works-python-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 50px auto;
+}
+
+/* カード */
+.works-python-list li {
+  margin-bottom: 20px;
+}
+
+/* リンクをカード化 */
+.works-python-list a {
+  display: block;
+  padding: 20px 25px;
+
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(0, 255, 255, 0.4);
+  border-radius: 10px;
+
+  text-decoration: none;
+  transition: 0.3s;
+
+  /* 文字色 */
+  color: #7ff9ff; /* ベース水色 */
+}
+
+/* タイトル */
+.work-python-title {
+  display: block;
+  font-size: 30px;
+  /* font-weight: bold; */
+  color: #7ff9ff;
+  /* text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff; */
+}
+
+/* 技術スタック（小さめ） */
+.work-python-tech {
+  display: block;
+  font-size: 20px;
+  margin-top: 5px;
+  color: #7ff9ff;
+}
+
+/* ステータス */
+.work-python-status {
+  font-size: 16px;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+/* ホバーで光る */
+.works-python-list a:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 30px #00ffff;
+    color: #00ffff;        /* 明るい黄色 */
+  text-shadow: 0 0 5px #00ffff; /* 光らせる */
+}
+
+/* ---------- php ---------- */
+/* リスト全体を中央 */
+.works-php-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 50px auto;
+}
+
+/* カード */
+.works-php-list li {
+  margin-bottom: 20px;
+}
+
+/* リンクをカード化 */
+.works-php-list a {
+  display: block;
+  padding: 20px 25px;
+
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(0, 255, 119, 0.4);
+  border-radius: 10px;
+
+  text-decoration: none;
+  transition: 0.3s;
+
+  /* 文字色 */
+  /* color: #4afb1d; ベース黄緑 */
+}
+
+/* タイトル */
+.work-php-title {
+  display: block;
+  font-size: 30px;
+  /* font-weight: bold; */
+  color: #8afa6e;
+  /* text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff; */
+}
+
+/* 技術スタック（小さめ） */
+.work-php-tech {
+  display: block;
+  font-size: 20px;
+  margin-top: 5px;
+  color: #8afa6e;
+}
+
+/* ステータス */
+.work-php-status {
+  font-size: 16px;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+/* ホバーで光る */
+.works-php-list a:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 10px #81fa62,
+    0 0 20px #81fa62,
+    0 0 30px #81fa62;
+    color: #81fa62;        /* 明るい黄色 */
+  text-shadow: 0 0 5px #81fa62; /* 光らせる */
+    
+}
+
+/* ---------- javascript ---------- */
+/* リスト全体を中央 */
+.works-javascript-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 50px auto;
+}
+
+/* カード */
+.works-javascript-list li {
+  margin-bottom: 20px;
+}
+
+/* リンクをカード化 */
+.works-javascript-list a {
+  display: block;
+  padding: 20px 25px;
+
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(212, 0, 255, 0.4);
+  border-radius: 10px;
+
+  text-decoration: none;
+  transition: 0.3s;
+
+  /* 文字色 */
+  /* color: #4afb1d; ベース黄緑 */
+}
+
+/* タイトル */
+.work-javascript-title {
+  display: block;
+  font-size: 30px;
+  /* font-weight: bold; */
+  color: #c26efa;
+  /* text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff; */
+}
+
+/* 技術スタック（小さめ） */
+.work-javascript-tech {
+  display: block;
+  font-size: 20px;
+  margin-top: 5px;
+  color: #c26efa;
+}
+
+/* ホバーで光る */
+.works-javascript-list a:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 10px #9c23f9,
+    0 0 20px #9c23f9,
+    0 0 30px #9c23f9;
+    color: #9c23f9;        /* 明るい黄色 */
+  text-shadow: 0 0 5px #9c23f9; /* 光らせる */
+}
+
+/* ハンバーガーメニュー */
+/* UFOボタン（外側） */
+.ufo-button {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+    border: 2px solid #ccc;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #bbbbbb,
+        #888888
+    );
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,0.6),
+        0 0 20px rgba(200,200,200,0.5);
+
+    transition: 0.3s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* UFOの中心（コア） */
+.ufo-core {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+
+    background: radial-gradient(circle, #ffffff, #bbbbbb);
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 10px #ffffff,
+        0 0 20px rgba(255,255,255,0.8);
+}
+
+/* ホバー時（外側） */
+.ufo-button:hover {
+    transform: translateY(-5px) scale(1.1);
+
+    box-shadow:
+        0 0 20px #ffffff,
+        0 0 40px #cccccc,
+        0 0 70px rgba(255,255,255,0.9);
+}
+
+/* ホバー時（コアも強く光る） */
+.ufo-button:hover .ufo-core {
+    box-shadow:
+        0 0 20px #ffffff,
+        0 0 40px #ffffff,
+        0 0 60px #ffffff;
+}
+
+/* メニュー本体（最初は隠す） */
+.ufo-menu {
+    position: fixed;
+    top: 120px;
+    right: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 0.3s;
+
+    z-index: 1001;
+}
+
+/* 表示状態 */
+.ufo-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* メニューリンク */
+.ufo-menu a {
+    display: block;
+    position: relative;
+    z-index: 1002;
+
+    padding: 14px 24px;
+    min-width: 140px;
+
+    background: rgba(0, 0, 0, 0.75);
+    border: 2px solid currentColor;
+
+    color: #f5f5f5;
+    text-decoration: none;
+
+    clip-path: polygon(
+        10% 0,
+        100% 0,
+        100% 80%,
+        90% 100%,
+        0 100%,
+        0 20%
+    );
+
+    box-shadow:
+        inset 0 0 12px rgba(255,255,255,0.18);
+
+    transition: 0.3s;
+}
+
+/* ホバー */
+.ufo-menu a:hover {
+    transform: translateX(-5px);
+    box-shadow:
+        0 0 12px currentColor,
+        inset 0 0 18px currentColor;
+}
+/* UFOメニューの色分け */
+.ufo-menu a.ufo-menu-top {
+    color: #f5f5f5;
+}
+
+.ufo-menu a.ufo-menu-profile {
+    color: #ff2b2b;
+}
+
+.ufo-menu a.ufo-menu-works {
+    color: #ffd700;
+}
