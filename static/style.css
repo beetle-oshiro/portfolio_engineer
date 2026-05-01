@@ -62,7 +62,7 @@ body::after {
 
 /* 制作物の背景 */
 body.works-page {
-  background-image: url("../static/images/metal_bg.png");
+  background-image: url("/static/images/metal_bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
