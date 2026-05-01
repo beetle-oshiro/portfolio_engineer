@@ -25,6 +25,9 @@
   </head>
 
   <body class="home-page">
+    <div id="loading-screen">
+      <canvas id="loadingCanvas"></canvas>
+    </div>
     <h1 class="site-title">エンジニア求人向け自己紹介サイト</h1>
 
     <main class="home-layout">
@@ -127,5 +130,86 @@
         <p class="droid-status">SYSTEM READY</p>
       </div> -->
     </main>
+    <script>
+      const canvas = document.getElementById("loadingCanvas");
+      const ctx = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let stars = [];
+
+      for (let i = 0; i < 400; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          z: Math.random() * canvas.width,
+        });
+      }
+
+      function draw() {
+        ctx.fillStyle = "#020617";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        for (let star of stars) {
+          star.z -= 20;
+
+          if (star.z <= 0) {
+            star.z = canvas.width;
+          }
+
+          let x =
+            (star.x - canvas.width / 2) * (canvas.width / star.z) +
+            canvas.width / 2;
+          let y =
+            (star.y - canvas.height / 2) * (canvas.width / star.z) +
+            canvas.height / 2;
+
+          let size = (1 - star.z / canvas.width) * 6;
+
+          ctx.fillStyle = "#38bdf8";
+          ctx.shadowBlur = 8;
+          ctx.shadowColor = "#38bdf8";
+
+          ctx.fillRect(x, y, size, size); // 中心座標
+          let centerX = canvas.width / 2;
+          let centerY = canvas.height / 2;
+
+          // ベクトル計算
+          let dx = x - centerX;
+          let dy = y - centerY;
+
+          let dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist === 0) dist = 1;
+
+          dx /= dist;
+          dy /= dist;
+
+          // 線 or 点
+          if (Math.random() < 0.5) {
+            let length = Math.random() * 30 + 10;
+
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x - dx * length, y - dy * length);
+            ctx.strokeStyle = "#38bdf8";
+            ctx.lineWidth = 2;
+            ctx.stroke();
+          } else {
+            ctx.fillRect(x, y, size, size);
+          }
+        }
+
+        requestAnimationFrame(draw);
+      }
+
+      draw();
+
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          document.getElementById("loading-screen").style.display = "none";
+        }, 500);
+      });
+    </script>
   </body>
 </html>
