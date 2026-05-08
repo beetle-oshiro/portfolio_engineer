@@ -16,28 +16,17 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 @app.route("/")
 def index():
-    prompt = """
-AIについて、
-あなたが思うことを短くコメントしてください。
-
-1～2文だけでお願いします。
-60文字以内。
-"""
-
-    response = client.responses.create(
-        model="gpt-4o-mini",
-        input=prompt
-    )
-
-    mystery_text = response.output_text.strip()
-
-    return render_template("index.html", mystery_text=mystery_text)
+    return render_template("index.html")
 
 
 @app.route("/profile")
 def profile():
     return render_template("profile.html")
 
+# -------------------- 紹介画面 --------------------
+@app.route("/intro")
+def intro():
+    return render_template("intro.html")
 
 # -------------------- 制作物 --------------------
 @app.route("/works")

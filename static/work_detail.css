@@ -69,16 +69,36 @@
    タイトル
 ========================= */
 .work-detail-title {
-    font-family: 'Dela Gothic One', sans-serif;
-    font-size: 40px;
-    margin: 10px 0 20px;
 
-    color: var(--main-color);
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    color: var(--main-color);;
+
+  -webkit-text-stroke: 1px #000; /* ←太くする */
 
     text-shadow:
-        2px 2px 0 #00383d,
-        0 0 8px var(--main-color),
-        0 0 18px var(--main-color);
+    0 0 10px rgba(232, 238, 238, 0.6),  /* ←これ追加（光） */
+        4px 4px 0 #000,
+        4px 4px 8px rgba(0,0,0,0.8);
+
+    letter-spacing: 4px;
+
+    transform: scaleY(0.8);
+    margin-bottom: 20px;
+
+    /* font-family: 'Dela Gothic One', sans-serif;
+    font-size: 40px;
+    letter-spacing: 5px;
+    margin: 10px 0 20px;
+
+    color: var(--main-color); */
+
+    /* text-shadow:
+        2px 2px 0 #00383d; */
+        /* 0 0 2px var(--main-color),
+        0 0 4px var(--main-color); */
+
 }
 
 /* =========================

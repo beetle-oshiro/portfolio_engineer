@@ -3,11 +3,24 @@ body {
     min-height: 100vh;
     font-family: 'Russo One', sans-serif;
 
-  background-image: url("/static/images/bg.jpg");
+  background-image: url("/static/images/bg_droid_c4.png");
   background-size: cover;       /* 画面いっぱいに広げる */
   background-position: center;  /* 中央基準 */
   background-repeat: no-repeat; /* 繰り返さない */
+
+  /* position: relative; */
 }
+
+/* body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.28);
+
+    z-index: -1;
+} */
 
 /* 星 */
 .home-page::before {
@@ -102,16 +115,17 @@ h1 {
 
 /* トップページのタイトル */
 .site-title {
-  font-family: 'Dela Gothic One', sans-serif;
-  font-size: 56px;
-  font-weight: bold;
-  letter-spacing: 4px;
-  line-height: 1.4;
-  text-align: center;
 
-  color: transparent;
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 66px;
+    font-weight: bold;
+    letter-spacing: 4px;
 
-  background: linear-gradient(
+    text-align: center;
+
+    color: transparent;
+
+    background: linear-gradient(
     180deg,
     #ffffff 0%,
     #eeeeee 20%,
@@ -120,19 +134,38 @@ h1 {
     #bbbbbb 70%,
     #ffffff 100%
   );
+    -webkit-background-clip: text;
+    background-clip: text;
+  -webkit-text-stroke: 1px #000; 
 
-  -webkit-background-clip: text;
-  background-clip: text;
+    text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.7),  /* ←これ追加（光） */
+        4px 4px 0 #000,
+        4px 4px 8px rgba(254, 254, 254, 0.9);
 
-  /* 縁をちょい明るめに */
-  /* -webkit-text-stroke: 1px #888; */
+        
 
-  /* 影を弱めて“黒感”を消す */
-  text-shadow:
-    1px 1px 2px rgba(0,0,0,0.4),
-    0 0 8px rgba(255,255,255,0.6);
 
-    margin-bottom: 40px;
+    /* transform: scaleY(0.8); */
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+
+.site-owner {
+    margin-top: -5px;
+    margin-bottom: 20px;
+
+    font-family: 'Russo One', sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+
+    color: #d7faff;
+    text-align: center;
+
+    text-shadow:
+        0 0 6px rgba(56, 189, 248, 0.8),
+        2px 2px 0 #000;
 }
 
 /* トップページの各ボタン */
@@ -896,7 +929,7 @@ ul li a:hover {
     color: #ffd700;
 }
 
-#loading-screen {
+/* #loading-screen {
   position: fixed;
   top: 0;
   left: 0;
@@ -909,4 +942,4 @@ ul li a:hover {
 #loadingCanvas {
   width: 100%;
   height: 100%;
-}
+} */

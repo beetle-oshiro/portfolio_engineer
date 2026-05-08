@@ -25,41 +25,31 @@
   </head>
 
   <body class="home-page">
-    <div id="loading-screen">
-      <canvas id="loadingCanvas"></canvas>
-    </div>
-    <h1 class="site-title">エンジニア求人向け自己紹介サイト</h1>
-
+    <h1 class="site-title">ポートフォリオサイト</h1>
+    <p class="site-owner">大城 将吾 / AIを活用した開発を学習・実践中</p>
     <main class="home-layout">
       <!-- 左：通常メニュー -->
       <div class="side-menu">
         <a href="/profile" class="side-button profile-button">
           <img
-            src="{{ url_for('static', filename='images/profile_ship.png') }}"
+            src="{{ url_for('static', filename='images/profile_ship2.png') }}"
             class="side-button-img"
           />
           <span>プロフィール</span>
+          <span>（経歴・現状）</span>
         </a>
 
         <a href="/works" class="side-button works-button">
           <img
-            src="{{ url_for('static', filename='images/works_ship.png') }}"
+            src="{{ url_for('static', filename='images/works_ship2.png') }}"
             class="side-button-img"
           />
           <span>制作物</span>
+          <span>（開発実績）</span>
         </a>
       </div>
 
-      <!-- 中央：奇妙ゾーン（隠れAI） -->
-      <section class="mystery-panel">
-        <div class="mystery-core">
-          <div class="mystery-ring"></div>
-
-          <p class="mystery-text">{{ mystery_text }}</p>
-        </div>
-      </section>
-
-      <!-- 右側：AI操作エリア -->
+      <!-- 右：AI -->
       <section class="assistant-panel">
         <h2>AI ASSISTANT</h2>
 
@@ -83,7 +73,7 @@
 
         <div class="ai-divider">OR</div>
 
-        <p class="ai-lead">見たいページを自然な言葉で入力してください。</p>
+        <p class="ai-lead">入力内容に応じて、該当ページへ案内します</p>
 
         <form action="/ai_suggest" method="post" class="ai-form">
           <select name="mode">
@@ -100,7 +90,6 @@
           <button type="submit">案内する</button>
         </form>
 
-        <!-- ここから追加👇 -->
         {% if suggestions %}
         <div class="ai-suggestions">
           <h3>AI提案</h3>
@@ -114,102 +103,7 @@
           {% endfor %}
         </div>
         {% endif %}
-        <!-- ここまで追加👆 -->
       </section>
-
-      <!-- 右：AIキャラクター -->
-      <!-- <div class="droid-area">
-        <div class="electric-circle"></div>
-
-        <img
-          src="{{ url_for('static', filename='images/droid_face.png') }}"
-          alt="AIアシスタント"
-          class="droid-face"
-        />
-
-        <p class="droid-status">SYSTEM READY</p>
-      </div> -->
     </main>
-    <script>
-      const canvas = document.getElementById("loadingCanvas");
-      const ctx = canvas.getContext("2d");
-
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-
-      let stars = [];
-
-      for (let i = 0; i < 400; i++) {
-        stars.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          z: Math.random() * canvas.width,
-        });
-      }
-
-      function draw() {
-        ctx.fillStyle = "#020617";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        for (let star of stars) {
-          star.z -= 20;
-
-          if (star.z <= 0) {
-            star.z = canvas.width;
-          }
-
-          let x =
-            (star.x - canvas.width / 2) * (canvas.width / star.z) +
-            canvas.width / 2;
-          let y =
-            (star.y - canvas.height / 2) * (canvas.width / star.z) +
-            canvas.height / 2;
-
-          let size = (1 - star.z / canvas.width) * 6;
-
-          ctx.fillStyle = "#38bdf8";
-          ctx.shadowBlur = 8;
-          ctx.shadowColor = "#38bdf8";
-
-          ctx.fillRect(x, y, size, size); // 中心座標
-          let centerX = canvas.width / 2;
-          let centerY = canvas.height / 2;
-
-          // ベクトル計算
-          let dx = x - centerX;
-          let dy = y - centerY;
-
-          let dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist === 0) dist = 1;
-
-          dx /= dist;
-          dy /= dist;
-
-          // 線 or 点
-          if (Math.random() < 0.5) {
-            let length = Math.random() * 30 + 10;
-
-            ctx.beginPath();
-            ctx.moveTo(x, y);
-            ctx.lineTo(x - dx * length, y - dy * length);
-            ctx.strokeStyle = "#38bdf8";
-            ctx.lineWidth = 2;
-            ctx.stroke();
-          } else {
-            ctx.fillRect(x, y, size, size);
-          }
-        }
-
-        requestAnimationFrame(draw);
-      }
-
-      draw();
-
-      window.addEventListener("load", () => {
-        setTimeout(() => {
-          document.getElementById("loading-screen").style.display = "none";
-        }, 500);
-      });
-    </script>
   </body>
 </html>

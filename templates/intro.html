@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>サイト紹介</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/intro.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+      rel="stylesheet"
+    /> -->
+  </head>
+
+  <body class="intro-page">
+    <a href="/" class="skip-link">SKIP</a>
+
+    <main class="intro-wrap">
+      <div class="intro-droid">
+        <div class="droid-flash"></div>
+        <div class="droid-summon-ring"></div>
+
+        <img
+          id="droid-mouth"
+          src="{{ url_for('static', filename='images/droid_close.png') }}"
+          alt="AIドロイド"
+          class="intro-droid-img"
+        />
+      </div>
+
+      <p id="typing-text" class="intro-message"></p>
+    </main>
+
+    <script>
+      const texts = [
+        "このサイトでは、制作物とプロフィールを確認できます。",
+        "AIや各プログラミング言語を活用した開発を行っています。",
+        "右側のAIアシスタントで質問やページ案内が可能です。",
+        "用途に応じて、左のメニューから移動してください。",
+        "ChatGPT APIを組み込んだ制作物を掲載しています。",
+        "未経験から、AIと共に開発を積み重ねています。",
+        "試行錯誤しながら、動く制作物を一つずつ作っています。",
+        "ここから、AIと共に作ったポートフォリオをご案内します。",
+        "AIをただ使うだけでなく、Webアプリに組み込んでいます。",
+      ];
+
+      // ランダム文章
+      let text = texts[Math.floor(Math.random() * texts.length)];
+      let index = 0;
+
+      const typingEl = document.getElementById("typing-text");
+      const img = document.getElementById("droid-mouth");
+
+      const mouthFrames = [
+        "{{ url_for('static', filename='images/droid_close.png') }}",
+        "{{ url_for('static', filename='images/droid_open.png') }}",
+      ];
+
+      let mouthIndex = 0;
+      let talking = false;
+
+      function animateMouth() {
+        if (!talking) return;
+
+        img.src = mouthFrames[mouthIndex];
+        mouthIndex = (mouthIndex + 1) % mouthFrames.length;
+
+        setTimeout(animateMouth, 120);
+      }
+
+      function typeText() {
+        if (index < text.length) {
+          if (!talking) {
+            talking = true;
+            animateMouth();
+          }
+
+          typingEl.textContent += text[index];
+          index++;
+
+          setTimeout(typeText, 45);
+        } else {
+          talking = false;
+          img.src =
+            "{{ url_for('static', filename='images/droid_close.png') }}";
+
+          setTimeout(() => {
+            window.location.href = "/";
+          }, 1500);
+        }
+      }
+
+      window.addEventListener("load", () => {
+        setTimeout(typeText, 2200);
+      });
+    </script>
+  </body>
+</html>
