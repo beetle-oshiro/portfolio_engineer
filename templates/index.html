@@ -67,7 +67,7 @@
         {% if result %}
         <div class="ai-result">
           <h3>AI RESPONSE</h3>
-          <p>{{ result }}</p>
+          <p>{{ result | safe }}</p>
         </div>
         {% endif %}
 

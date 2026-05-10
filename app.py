@@ -308,6 +308,7 @@ def ai_question():
 ・褒めすぎない
 ・採用担当者が読んでも違和感のない表現にする
 ・短めに答える
+・複数項目を説明する場合は、必ず改行して箇条書き風にする
 
 【大城将吾の情報】
 {profile_info}
@@ -415,6 +416,16 @@ def ai_feedback():
     )
 
     result = response.output_text.strip()
+
+    # 「1.」「2.」「3.」の前に改行を入れる
+    result = result.replace(" 1.", "<br>1.")
+    result = result.replace(" 2.", "<br>2.")
+    result = result.replace(" 3.", "<br>3.")
+    result = result.replace(" 4.", "<br>4.")
+    result = result.replace(" 5.", "<br>5.")
+
+    # 通常の改行もHTML用に変換
+    result = result.replace("\n", "<br>")
 
     return render_template("index.html", result=result)
 

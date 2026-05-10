@@ -7,12 +7,16 @@
       href="{{ url_for('static', filename='style.css') }}"
     />
     <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='work_detail.css') }}"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
       rel="stylesheet"
     />
     <title>PHP制作物</title>
   </head>
-  <body class="works-page">
+  <body class="works-page php-theme">
     <div class="ufo-button">
       <div class="ufo-core"></div>
     </div>
@@ -22,11 +26,16 @@
       <a href="/works" class="ufo-menu-works">制作物</a>
     </div>
 
+    <!-- 戻るUFO -->
+    <a href="javascript:history.back();" class="back-ufo">
+      <img
+        src="{{ url_for('static', filename='images/UFO_6.png') }}"
+        alt="戻る"
+      />
+    </a>
+
     <div class="hero">
       <h1 class="main-title">PHP</h1>
-      <!-- <div class="title-line"></div>
-      <p class="sub-title">PYTHON</p>
-      <p class="sub-title">BUILD THE FUTURE</p> -->
     </div>
 
     <ul class="works-php-list">
@@ -48,7 +57,6 @@
       </li>
     </ul>
 
-    <a href="/works">制作物へ戻る</a>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>
 </html>
